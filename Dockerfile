@@ -5,7 +5,7 @@ COPY fastcgi-wrapper.pl /usr/bin/fastcgi-wrapper.pl
 COPY init.sh /init.sh
 
 RUN apt-get update && \
-    apt-get install -y libfcgi-perl && \
+    apt-get install -y libfcgi-perl libcgi-pm-perl libwww-perl && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     chmod +x /init.sh && \
